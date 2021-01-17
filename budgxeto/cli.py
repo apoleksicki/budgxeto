@@ -1,7 +1,7 @@
 import sys
 from typing import Callable
 
-from budgxeto.generic import Command
+from budgxeto.application.expense import AddExpenseCommandHandler
 from budgxeto.generic import CommandHandler
 
 
