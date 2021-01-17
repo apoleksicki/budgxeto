@@ -1,11 +1,13 @@
 import subprocess
 from unittest import TestCase
+from unittest import expectedFailure
 
 
 class TestExpenses(TestCase):
     def test_user_can_add_expense(self) -> None:
         self.user_adds_expense()
 
+    @expectedFailure
     def test_user_can_list_expenses(self) -> None:
         self.user_adds_expense()
         self.user_lists_expenses()
@@ -17,4 +19,8 @@ class TestExpenses(TestCase):
     def user_lists_expenses(self) -> None:
         result = subprocess.run(['budgxeto', 'list-expenses'], capture_output=True)
         self.assertEqual(0, result.returncode)
-        self.assertEqual('Expenses\n', result.stdout.decode())
+        expected_report = (
+            'Expenses:\n'
+            '100\n'
+        )
+        self.assertEqual(expected_report, result.stdout.decode())
