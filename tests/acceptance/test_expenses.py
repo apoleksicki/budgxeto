@@ -15,7 +15,9 @@ class TestExpenses(TestCase):
         self.assertEqual(0, result.returncode)
 
     def user_lists_expenses(self) -> None:
-        result = subprocess.run(['budgxeto', 'list-expenses'], capture_output=True)
+        result = subprocess.run(
+            ['budgxeto', 'list-expenses'], capture_output=True,
+        )
         self.assertEqual(0, result.returncode)
         expected_report = (
             'Expenses:\n'
