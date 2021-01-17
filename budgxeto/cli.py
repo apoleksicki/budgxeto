@@ -2,12 +2,14 @@ import sys
 from typing import Callable
 
 from budgxeto.application.expense import AddExpenseCommandHandler
+from budgxeto.generic import Command
 from budgxeto.generic import CommandHandler
 
 
 def create_add_expense(handler: CommandHandler) -> Callable[[str], None]:
     def add_expense(amount: str) -> None:
-        pass
+        handler.handle(Command())
+
     return add_expense
 
 
