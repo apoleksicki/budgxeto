@@ -17,10 +17,6 @@ def list_expenses() -> None:
 
 
 def main() -> None:
-    class AddExpenseCommandHandler(CommandHandler):
-        def handle(self, command: Command) -> None:
-            pass
-
     add_expense = create_add_expense(AddExpenseCommandHandler())
 
     if sys.argv[1] == 'add-expense':
