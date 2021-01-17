@@ -11,8 +11,11 @@ class TestExpenses(TestCase):
         self.user_lists_expenses()
 
     def user_adds_expense(self) -> None:
-        result = subprocess.run(['budgxeto', 'add-expense', '100'])
+        result = subprocess.run(
+            ['budgxeto', 'add-expense', '100'], capture_output=True,
+        )
         self.assertEqual(0, result.returncode)
+        self.assertEqual(None, result.stdout.decode())
 
     def user_lists_expenses(self) -> None:
         result = subprocess.run(

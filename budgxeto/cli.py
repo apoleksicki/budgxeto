@@ -2,7 +2,7 @@ import sys
 
 
 def add_expense() -> None:
-    print('Expenses')
+    pass
 
 
 def list_expenses() -> None:
