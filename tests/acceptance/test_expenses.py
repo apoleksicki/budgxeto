@@ -1,13 +1,11 @@
 import subprocess
 from unittest import TestCase
-from unittest import expectedFailure
 
 
 class TestExpenses(TestCase):
     def test_user_can_add_expense(self) -> None:
         self.user_adds_expense()
 
-    @expectedFailure
     def test_user_can_list_expenses(self) -> None:
         self.user_adds_expense()
         self.user_lists_expenses()

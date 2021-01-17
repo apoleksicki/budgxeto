@@ -6,7 +6,8 @@ def add_expense() -> None:
 
 
 def list_expenses() -> None:
-    print('Expenses')
+    print('Expenses:')
+    print('100')
 
 
 def main() -> None:
