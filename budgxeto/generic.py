@@ -10,3 +10,7 @@ class CommandHandler(ABC):
     @abstractmethod
     def handle(self, command: Command) -> None:
         pass
+
+
+class Event:
+    pass
